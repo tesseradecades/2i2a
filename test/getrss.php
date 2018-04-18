@@ -44,7 +44,7 @@ $x = array_merge($googleItems,$nbcItems);
 
 
 //get and output "<item>" elements
-$x=$xmlDoc->getElementsByTagName('item');
+//$x=$xmlDoc->getElementsByTagName('item');
 for ($i=0; $i<=2; $i++) {
   $item_title=$x->item($i)->getElementsByTagName('title')
   ->item(0)->childNodes->item(0)->nodeValue;
