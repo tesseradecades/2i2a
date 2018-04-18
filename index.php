@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(/*logged in*/ $_SESSION["username"]==""){
+    if(/*logged in*/ $_SESSION["username"] != ""){
         ?>
         <script>
             window.location.replace("feed.php");
