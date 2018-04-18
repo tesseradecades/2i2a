@@ -1,8 +1,10 @@
 <?php
     session_start();
-    if (!empty($_POST['username']) && !empty($_POST['password'])){
-        if ( $_POST['password'] == '1234') { // only check for a password of 1234
-            $_SESSION['username'] = $_POST['username'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (!empty($username) && !empty($password)){
+        if ( $password == '1234') { // only check for a password of 1234
+            $_SESSION['username'] = $username;
         }
     }
 ?>
