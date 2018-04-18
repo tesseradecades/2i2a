@@ -9,5 +9,5 @@
     }
 ?>
 <script>
-    window.location.replace("../feed.php");
+    window.location.replace("../index.php");
 </script>
