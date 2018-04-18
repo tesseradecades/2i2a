@@ -4,11 +4,9 @@
         ?>
             <div class = "container">
                 <form class ="actions/login.php" method = "post">
-                    <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
                     <input type = "text" name = "username" required autofocus></br>
                     <input type = "password"  name = "password" required>
-                    <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                        name = "login">Login</button>
+                    <button class = "btn btn-lg btn-primary btn-block" type = "submit"  name = "login">Login</button>
                 </form>
                     
                 Click here to clean <a href = "actions/logout.php" title = "Logout">Session.</a>
