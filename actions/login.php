@@ -7,5 +7,5 @@
     }
 ?>
 <script>
-    window.location.replace("../index.php");
+    window.location.replace("../feed.php");
 </script>
