@@ -34,12 +34,12 @@ echo("<br>");
 echo($channel_desc . "</p>");
 
 
-/*$nbcXml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
+$nbcXml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
 $nbcXmlDoc = new DOMDocument();
 $nbcXmlDoc->load($nbcXml);
 $nbcItems = $nbcXmlDoc->getElementsByTagName('item');
 
-$x = array_merge($googleItems,$nbcItems);*/
+/*$x = array_merge($googleItems,$nbcItems);*/
 
 
 
