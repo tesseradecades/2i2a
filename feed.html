@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="stylesheets/feed.css">
     <script src="javascript/feed.js"></script>
 
+    <script src="javascript/signin.js"></script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -54,16 +56,22 @@
           <!--<li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>-->
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" id="loggedOutDropdown">
                 <a class="nav-link dropdown-toggle" id="newAccountdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">New Account</a>
                 <div class="dropdown-menu filters" aria-labelledby="dropdown01">
                         <!--<form class="form-signin" >-->
                             <!--<h1 class="h3 mb-3 font-weight-normal">Please enter a new username and password</h1>-->
                             <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
                             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                            <button class="btn btn-lg btn-primary btn-block" onclick="alert('New Account Created!')">Create Account</button>
+                            <button class="btn btn-lg btn-primary btn-block" onclick="signin()">Create Account</button>
                             
                         <!--</form>-->
+                </div>
+            </li>
+            <li class="nav-item dropdown" id="loggedInDropdown" style="display: none;">
+                <a class="nav-link dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                <div class="dropdown-menu filters" aria-labelledby="dropdown01">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="signOut()">Sign Out</button>
                 </div>
             </li>
           <li class="nav-item dropdown">
