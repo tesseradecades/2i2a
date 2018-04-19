@@ -24,19 +24,6 @@ function init(url){
     //alert(data);
 }
 
-function filterFeed(){
-    $('.filter').toArray().forEach(element => {
-        console.log(element['name']);
-        var fil = 'div.item.'+element['name']+'item';
-        
-        if(element.checked == true){
-            $(fil).show();
-        }else{
-            $(fil).hide();
-        }
-    });
-}
-
 function xmlLoaded(obj,n){
     console.log("obj = " +obj);
     var items = obj.querySelectorAll("item");
@@ -86,4 +73,23 @@ function favorite(obj){
     }else{
         obj['src'] = unfav;
     }
+}
+
+function filterFeed(){
+    $('.filter').toArray().forEach(element => {
+        console.log(element['name']);
+        var fil = 'div.item.'+element['name']+'item';
+        
+        if(element.checked == true){
+            $(fil).show();
+        }else{
+            $(fil).hide();
+        }
+    });
+}
+
+function toggleFilter(filter){
+    var fil = 'div.item.'+filter+'.item';
+    console.log(fil);
+    $(fil).toggle();
 }

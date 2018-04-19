@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
- 	<title>NFL News</title>
-	<!-- Import jQuery -->
+  <head>
+    <title>2I2A</title>
+    <!-- Import jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="stylesheets/feed.css">
-    <script src="javascript/feed.js"></script>  
+    <script src="javascript/feed.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/starter-template/starter-template.css" rel="stylesheet">
+    
     <script>
         $(document).ready(function(){
             function populate(field){
@@ -16,38 +27,67 @@
             }
             function init() {
                 $('#lastVisited').text(localStorage['lastVisited']);
+                localStorage['nextVisited'] = "Last Visited "+new Date().toLocaleTimeString();
             }
             init();
         });
 
         function saveTime(){
-            localStorage['lastVisited'] = new Date().toLocaleTimeString();
+            localStorage['lastVisited'] = "Last Visited "+new Date().toLocaleTimeString();
         }
-
+        $(window).unload(function(){
+            localStorage['lastVisited']=localStorage['nextVisited'];
+        });
     </script>
-</head>
-<body>
+  </head>
 
-    <label type="text" name="lastVisited" id="lastVisited" class="stored" value="" required></label>
+  <body>
 
-    <div>
-        <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" />Football<br />
-        <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" />Basketball<br />
-        <input type="checkbox" name="baseball" class="filter" id="baseballCheckbox" value="baseball" />Baseball<br />
-        <button value="Filter" onclick="filterFeed()">Filter</button>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">2I2A</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button onclick="saveTime()">Save Time</button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filters</a>
+            <div class="dropdown-menu filters" aria-labelledby="dropdown01">
+              <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" />Football<br />
+            <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" />Basketball<br />
+            <input type="checkbox" name="baseball" class="filter" id="baseballCheckbox" value="baseball" />Baseball<br />
+            <button value="Filter" onclick="filterFeed()">Filter</button>
+            </div>
+          </li>
+        </ul>
+        <label type="text" name="lastVisited" id="lastVisited" class="stored" value="" style="color: white"></label>
+      </div>
+    </nav>
 
-    <div>
-        <div id="header">
-            <img id="logo" /><h1>Football News</h1>
+    <main role="main" class="container">
+    
+        <div>
+            <div id="header">
+                <img id="logo" /><h1>MLB, NBA, and NFL News</h1>
+            </div>
+    
+            <div id="content">
+                <p>No data has been loaded.</p>
+            </div>
         </div>
 
-        <div id="content">
-            <p>No data has been loaded.</p>
-        </div>
-    </div>
+    </main><!-- /.container -->
 
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>-->
+    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
