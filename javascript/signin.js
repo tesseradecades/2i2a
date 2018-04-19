@@ -17,7 +17,8 @@ function signin(){
     $("#userDropdown").text(username);
     $("#loggedInDropdown").show();
     $('#lastVisited').text(localStorage['lastVisited']);
-    localStorage['nextVisited'] = "Last Visited "+new Date().toLocaleTimeString();
+    var d = new Date();
+    localStorage['nextVisited'] = "Last Visited "+d.toLocaleDateString()+" "+d.toLocaleTimeString();
 }
 
 function signOut(){
@@ -25,4 +26,5 @@ function signOut(){
     $("#userDropdown").text("");
     $("#loggedInDropdown").hide();
     localStorage['lastVisited']=localStorage['nextVisited'];
+    $('#lastVisited').text("");
 }

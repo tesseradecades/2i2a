@@ -57,9 +57,10 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filters</a>
             <div class="dropdown-menu filters" aria-labelledby="dropdown01">
-              <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" />Football<br />
-            <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" />Basketball<br />
-            <input type="checkbox" name="baseball" class="filter" id="baseballCheckbox" value="baseball" />Baseball<br />
+              
+              <input type="checkbox" name="baseball" class="filter" id="baseballCheckbox" value="baseball" checked/>Baseball<br />
+              <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" checked/>Basketball<br />
+              <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" checked/>Football<br />
             <button value="Filter" onclick="filterFeed()">Filter</button>
             </div>
           </li>

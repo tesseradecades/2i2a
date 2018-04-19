@@ -46,7 +46,7 @@ function xmlLoaded(obj,n){
         var pubDate = newsItem.querySelector("pubDate").firstChild.nodeValue;
         
         //present the item as HTML
-        var line = '<div class="item '+n+'item">';//+'<td><img src="assets/pointed-star-silhouette_318-35987.jpg" width="16" height="16" onclick="favorite(this)"></td><td>';
+        var line = '<div class="item '+n+'item"><td><span>'+n+'</span></td>';//+'<td><img src="assets/pointed-star-silhouette_318-35987.jpg" width="16" height="16" onclick="favorite(this)"></td><td>';
         line += "<h2>"+title+"</h2>";
         line += '<p><i>'+pubDate+'</i> - <a href="'+link+'" target="_blank">See original</a></p></td>';
         line += "</div>";
