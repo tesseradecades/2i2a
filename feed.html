@@ -7,8 +7,30 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/feed.css">
     <script src="javascript/feed.js"></script>  
+    <script>
+        $(document).ready(function(){
+            function populate(field){
+                if (localStorage[field]) {
+                    $('#'+field).val(localStorage[field]);
+                }
+            }
+            function init() {
+                $('#lastVisited').text(localStorage['lastVisited']);
+            }
+            init();
+        });
+
+        function saveTime(){
+            localStorage['lastVisited'] = new Date().toLocaleTimeString();
+        }
+
+    </script>
 </head>
 <body>
+
+    <label type="text" name="lastVisited" id="lastVisited" class="stored" value="" required></label>
+
+    <button onclick="saveTime()">Save Time</button>
 
 	<div id="header">
 		<img id="logo" /><h1>Football News</h1>
