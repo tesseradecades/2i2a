@@ -24,6 +24,16 @@ function init(url){
     //alert(data);
 }
 
+function filterFeed(){
+    $('.filter').toArray().forEach(element => {
+        console.log(element['name']);
+        if(element.checked == true){
+            $("#"+element['name']+"Div").show();
+        }else{
+            $("#"+element['name']+"Div").hide();
+        }
+    });
+}
 
 function xmlLoaded(obj){
     console.log("obj = " +obj);

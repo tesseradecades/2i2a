@@ -30,30 +30,43 @@
 
     <label type="text" name="lastVisited" id="lastVisited" class="stored" value="" required></label>
 
+    <div>
+        <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" />Football<br />
+        <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" />Basketball<br />
+        <input type="checkbox" name="baseball" class="filter" id="baseballCheckbox" value="baseball" />Baseball<br />
+        <button value="Filter" onclick="filterFeed()">Filter</button>
+    </div>
+
     <button onclick="saveTime()">Save Time</button>
 
-	<div id="header">
-		<img id="logo" /><h1>Football News</h1>
-	</div>
+    <div id="footballDiv">
+        <div id="header">
+            <img id="logo" /><h1>Football News</h1>
+        </div>
 
-	<div id="content">
-		<p>No data has been loaded.</p>
-	</div>
+        <div id="content">
+            <p>No data has been loaded.</p>
+        </div>
+    </div>
  
-    <div id="header2">
-        <img id="logo2" /><h1>Basketball News</h1>
+    <div id="basketballDiv">
+        <div id="header2">
+            <img id="logo2" /><h1>Basketball News</h1>
+        </div>
+
+        <div id="content2">
+            <p>No data has been loaded.</p>
+        </div>
     </div>
 
-    <div id="content2">
-        <p>No data has been loaded.</p>
-    </div>
+    <div id="baseballDiv">
+        <div id="header3">
+            <img id="logo3" /><h1>Baseball News</h1>
+        </div>
 
-    <div id="header3">
-        <img id="logo3" /><h1>Baseball News</h1>
-    </div>
-
-    <div id="content3">
-        <p>No data has been loaded.</p>
+        <div id="content3">
+            <p>No data has been loaded.</p>
+        </div>
     </div>
 
 </body>
