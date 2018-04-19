@@ -16,10 +16,13 @@ function signin(){
     console.log(username);
     $("#userDropdown").text(username);
     $("#loggedInDropdown").show();
+    $('#lastVisited').text(localStorage['lastVisited']);
+    localStorage['nextVisited'] = "Last Visited "+new Date().toLocaleTimeString();
 }
 
 function signOut(){
     $("#loggedOutDropdown").show();
     $("#userDropdown").text("");
     $("#loggedInDropdown").hide();
+    localStorage['lastVisited']=localStorage['nextVisited'];
 }

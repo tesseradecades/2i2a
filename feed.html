@@ -19,28 +19,6 @@
     <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/starter-template/starter-template.css" rel="stylesheet">
-    
-    <script>
-        $(document).ready(function(){
-            function populate(field){
-                if (localStorage[field]) {
-                    $('#'+field).val(localStorage[field]);
-                }
-            }
-            function init() {
-                $('#lastVisited').text(localStorage['lastVisited']);
-                localStorage['nextVisited'] = "Last Visited "+new Date().toLocaleTimeString();
-            }
-            init();
-        });
-
-        function saveTime(){
-            localStorage['lastVisited'] = "Last Visited "+new Date().toLocaleTimeString();
-        }
-        $(window).unload(function(){
-            localStorage['lastVisited']=localStorage['nextVisited'];
-        });
-    </script>
   </head>
 
   <body>
