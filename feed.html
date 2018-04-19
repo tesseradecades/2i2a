@@ -51,11 +51,23 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <!--<li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+          </li>-->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filters</a>
+                <a class="nav-link dropdown-toggle" id="newAccountdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">New Account</a>
+                <div class="dropdown-menu filters" aria-labelledby="dropdown01">
+                        <!--<form class="form-signin" >-->
+                            <!--<h1 class="h3 mb-3 font-weight-normal">Please enter a new username and password</h1>-->
+                            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <button class="btn btn-lg btn-primary btn-block" onclick="alert('New Account Created!')">Create Account</button>
+                            
+                        <!--</form>-->
+                </div>
+            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filters</a>
             <div class="dropdown-menu filters" aria-labelledby="dropdown01">
               <input type="checkbox" class="filter" name="football" id="footballCheckbox" value="football" />Football<br />
             <input type="checkbox" name="basketball" class="filter" id="basketballCheckbox" value="basketball" />Basketball<br />
@@ -65,6 +77,7 @@
           </li>
         </ul>
         <label type="text" name="lastVisited" id="lastVisited" class="stored" value="" style="color: white"></label>
+        
       </div>
     </nav>
 
